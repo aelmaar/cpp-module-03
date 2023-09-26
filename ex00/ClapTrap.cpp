@@ -6,7 +6,7 @@
 /*   By: ael-maar <ael-maar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 11:42:27 by ael-maar          #+#    #+#             */
-/*   Updated: 2023/09/26 15:01:48 by ael-maar         ###   ########.fr       */
+/*   Updated: 2023/09/26 15:13:14 by ael-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void    ClapTrap::attack(const std::string &target)
     if (energy_points == 0)
         std::cout << name << " has no energy points left" << std::endl;
     else if (hit_points <= 0)
-        std::cout << "The ClapTrack " << name << " Dead" << std::endl;
+        std::cout << "The ClapTrap " << name << " Dead" << std::endl;
     else
     {
         std::cout << "ClapTrap " << name << " attacks " << target << \
