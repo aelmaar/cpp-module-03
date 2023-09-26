@@ -6,7 +6,7 @@
 /*   By: ael-maar <ael-maar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 11:42:27 by ael-maar          #+#    #+#             */
-/*   Updated: 2023/09/25 13:56:24 by ael-maar         ###   ########.fr       */
+/*   Updated: 2023/09/26 13:03:22 by ael-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ ClapTrap::ClapTrap(ClapTrap const &old_obj)
     this->hit_points = old_obj.hit_points;
     this->attack_damage = old_obj.attack_damage;
     this->energy_points = old_obj.energy_points;
+    std::cout << "Copy constructor called" << std::endl;
 }
 
 // Implementation of the copy assignment operator
@@ -39,6 +40,7 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &other)
         this->attack_damage = other.attack_damage;
         this->energy_points = other.energy_points;
     }
+    std::cout << "Copy assignment operator called" << std::endl;
     return (*this);
 }
 
