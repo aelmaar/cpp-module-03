@@ -6,7 +6,7 @@
 /*   By: ael-maar <ael-maar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:51:18 by ael-maar          #+#    #+#             */
-/*   Updated: 2023/09/27 12:02:23 by ael-maar         ###   ########.fr       */
+/*   Updated: 2023/09/27 16:46:34 by ael-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class FragTrap: public ClapTrap
         FragTrap &operator=(FragTrap const &other);
         ~FragTrap();
         void highFivesGuys(void);
+        void attack(const std::string& target);
 };
 
 #endif

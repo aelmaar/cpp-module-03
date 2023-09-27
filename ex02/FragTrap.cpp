@@ -6,7 +6,7 @@
 /*   By: ael-maar <ael-maar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:51:16 by ael-maar          #+#    #+#             */
-/*   Updated: 2023/09/27 14:00:49 by ael-maar         ###   ########.fr       */
+/*   Updated: 2023/09/27 16:46:54 by ael-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,29 @@ FragTrap &FragTrap::operator=(FragTrap const &other) {
 }
 
 // Implementation of the destructor
-FragTrap::~FragTrap() { std::cout << "Destructor of ScavTrap called" << std::endl; }
+FragTrap::~FragTrap() { std::cout << "Destructor of FragTrap called" << std::endl; }
 
 // Implementation of the highFivesGuys() function
 void    FragTrap::highFivesGuys() {
     std::cout << "High five request" << std::endl;
+}
+
+// Implementation of the attack() function
+void    FragTrap::attack(const std::string &target)
+{
+    if (target.empty())
+    {
+        std::cout << "No target specified" << std::endl;
+        return;
+    }
+    if (hit_points <= 0)
+        std::cout << "The FragTrap " << name << " Dead" << std::endl;
+    else if (energy_points == 0)
+        std::cout << "The FragTrap " << name << " has no energy points left" << std::endl;
+    else
+    {
+        std::cout << "FragTrap " << name << " attacks " << target << \
+        ", causing " << attack_damage << " points of damage" << std::endl;
+        energy_points--;
+    }
 }
