@@ -6,7 +6,7 @@
 /*   By: ael-maar <ael-maar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:51:16 by ael-maar          #+#    #+#             */
-/*   Updated: 2023/09/27 12:04:38 by ael-maar         ###   ########.fr       */
+/*   Updated: 2023/09/27 14:00:49 by ael-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,19 @@
 FragTrap::FragTrap() { std::cout << "Default constructor of FragTrap called" << std::endl; }
 
 // Implementation of the paramterize constructor
-FragTrap::FragTrap(const std::string &name): ClapTrap(name) {}
+FragTrap::FragTrap(const std::string &name): ClapTrap(name) {
+    std::cout << "Parameterized constructor of FragTrap called" << std::endl;
+}
 
 // Implementation of the copy constructor
-FragTrap::FragTrap(FragTrap const &old_obj) {
-    (void)old_obj;
+FragTrap::FragTrap(FragTrap const &old_obj): ClapTrap(old_obj) {
     std::cout << "Copy constructor of FragTrap called" << std::endl;
 }
 
 // Implementation of the copy assignment operator
 FragTrap &FragTrap::operator=(FragTrap const &other) {
-    (void)other;
+    if (this != &other)
+        ClapTrap::operator=(other);
     std::cout << "Copy assignment operator of FragTrap called" << std::endl;
     return (*this);
 }

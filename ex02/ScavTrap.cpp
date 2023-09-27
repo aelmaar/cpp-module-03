@@ -6,7 +6,7 @@
 /*   By: ael-maar <ael-maar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 15:24:20 by ael-maar          #+#    #+#             */
-/*   Updated: 2023/09/26 15:26:54 by ael-maar         ###   ########.fr       */
+/*   Updated: 2023/09/27 13:31:57 by ael-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,21 @@
 ScavTrap::ScavTrap() { std::cout << "Default constructor of ScavTrap called" << std::endl; }
 
 // Implemenatation of the paramterized constructor
-ScavTrap::ScavTrap(const std::string &name): ClapTrap(name) {}
+ScavTrap::ScavTrap(const std::string &name): ClapTrap(name) {
+    std::cout << "Parameterized constructor of ScavTrap called" << std::endl;
+}
 
 // Implementation of the copy constructor
-ScavTrap::ScavTrap(ScavTrap const &old_obj)
+ScavTrap::ScavTrap(ScavTrap const &old_obj): ClapTrap(old_obj)
 {
-    (void)old_obj;
     std::cout << "Copy constructor of ScavTrap called" << std::endl;
 }
 
 // Implementation of the copy assignment operator
 ScavTrap &ScavTrap::operator=(ScavTrap const &other)
 {
-    (void)other;
+    if (this != &other)
+        ClapTrap::operator=(other);
     std::cout << "Copy assignment operator of ScavTrap called" << std::endl;
     return (*this);
 }
@@ -61,4 +63,3 @@ void    ScavTrap::guardGate()
 {
     std::cout << "The ScavTrap " << name << " is now in Gate Keeper mode." << std::endl;
 }
-
