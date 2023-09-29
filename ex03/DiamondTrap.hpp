@@ -6,7 +6,7 @@
 /*   By: ael-maar <ael-maar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 15:03:40 by ael-maar          #+#    #+#             */
-/*   Updated: 2023/09/27 17:42:35 by ael-maar         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:18:08 by ael-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class DiamondTrap: public FragTrap, public ScavTrap
         DiamondTrap &operator=(DiamondTrap const &other);
         ~DiamondTrap();
         void whoAmI();
+        void attack(const std::string& target);
 };
 
 #endif

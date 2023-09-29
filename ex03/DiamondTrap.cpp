@@ -6,7 +6,7 @@
 /*   By: ael-maar <ael-maar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 15:03:37 by ael-maar          #+#    #+#             */
-/*   Updated: 2023/09/28 16:07:06 by ael-maar         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:18:53 by ael-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,24 @@ DiamondTrap::~DiamondTrap() { std::cout << "Destructor of DiamondTrap called" <<
 // Implementation of the whoAmI() function
 void    DiamondTrap::whoAmI() {
     std::cout << "My DiamondTrap name: " << name << " and my ClapTrap name: " << ClapTrap::name << std::endl;
+}
+
+// Implementation of the attack() function
+void    DiamondTrap::attack(const std::string &target)
+{
+    if (target.empty())
+    {
+        std::cout << "No target specified" << std::endl;
+        return;
+    }
+    if (hit_points <= 0)
+        std::cout << "The DiamondTrap " << name << " Dead" << std::endl;
+    else if (energy_points == 0)
+        std::cout << "The DiamondTrap " << name << " has no energy points left" << std::endl;
+    else
+    {
+        std::cout << "DiamondTrap " << name << " attacks " << target << \
+        ", causing " << attack_damage << " points of damage" << std::endl;
+        energy_points--;
+    }
 }
